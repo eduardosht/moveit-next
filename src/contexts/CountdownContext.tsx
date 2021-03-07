@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { ChallengesContext } from "./ChallengesContext";
 
 interface CountDownContextData {
@@ -8,10 +8,6 @@ interface CountDownContextData {
     isActive: boolean;
     startCountdown: () => void;
     resetCountdown: () => void;
-}
-
-interface CountdownProviderProps {
-    children: ReactNode;
 }
 
 export const CountdownContext = createContext({} as CountDownContextData);

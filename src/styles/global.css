@@ -47,3 +47,19 @@ a {
     color: inherit;
     text-decoration: none;
 }
+
+.m-b-8 {
+    margin-bottom: 8px !important;
+}
+
+.m-b-16 {
+    margin-bottom: 16px !important;
+}
+
+.m-b-24 {
+    margin-bottom: 24px !important;
+}
+
+.m-b-32 {
+    margin-bottom: 32px !important;
+}
