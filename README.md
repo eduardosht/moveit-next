@@ -36,3 +36,16 @@ To initilize the project, just run
 |undefined|Multi lang project|PENDING|
 |undefined|Create README Pt-BR|PENDING|
 |...|...|PENDING|
+
+# Stack (what we can found here?)
+
+**Front-end**
+ - [React JS](https://pt-br.reactjs.org/)
+ - [Typescript](https://www.typescriptlang.org/)
+ - [Next JS](https://nextjs.org/)
+ - [HTML / CSS](https://www.w3schools.com/)
+ - [NPM](https://www.npmjs.com/)
+
+**Backend-end**
+ - [Firebase](https://firebase.google.com/?hl=pt-br) (Authentication/Firestore)
+ - [Vercel](https://vercel.com/docs)
