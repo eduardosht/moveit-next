@@ -1,7 +1,7 @@
 import { UserProvider } from "../contexts/UserContext";
 import Login from './login/Login';
 
-function LoginPage() {
+function LoginPage({ hasUser }) {
   return (
     <UserProvider>
       <Login />

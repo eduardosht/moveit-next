@@ -28,9 +28,9 @@ export const ChallengesContext = createContext({} as ChallengesContextData);
 export function ChallengsProvider({ children }) {
     const { user, updateUserData } = useContext(UserContext);
 
-    const [level, setLevel] = useState(user.level ?? 1);
-    const [currentExperience, setCurrentExperience] = useState(user.experience ?? 0);
-    const [challengesCompleted, setChallengesCompleted] = useState(user.challengesCompleted ?? 0);
+    const [level, setLevel] = useState(user ? user.level : 1);
+    const [currentExperience, setCurrentExperience] = useState(user ? user.experience : 0);
+    const [challengesCompleted, setChallengesCompleted] = useState(user ? user.challengesCompleted : 0);
     const [activeChallenge, setActiveChallenge] = useState(null);
     const [isLevelUpModalOpen, setIsLevelModalOpen] = useState(false);
 

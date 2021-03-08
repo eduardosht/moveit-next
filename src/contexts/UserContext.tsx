@@ -1,8 +1,18 @@
 import { createContext, useState, useEffect } from 'react';
 import { auth, generateUserDocument, updateUserDocument } from '../firebase';
 
+interface User {
+    challengesCompleted: number;
+    displayName: string;
+    email: string;
+    experience: number;
+    level: number;
+    photoURL: string;
+    uid: string;
+}
+
 interface UserContextData {
-    user: any;
+    user: User;
     signOut: Function;
     updateUserData: Function;
 }
@@ -14,7 +24,7 @@ export function UserProvider({ children }) {
 
     useEffect(() => {
         auth.onAuthStateChanged(async userAuth => {
-            const user = await generateUserDocument(userAuth);
+            const user = await generateUserDocument(userAuth) as User;
             setUser(user);
         })
     }, []);
@@ -27,8 +37,8 @@ export function UserProvider({ children }) {
     }
 
     async function updateUserData(aditionalData) {
-        const userModified = await updateUserDocument(user, aditionalData);
-        setUser(userModified)
+        const userModified = await updateUserDocument(user, aditionalData) as User;
+        setUser(userModified);
     }
 
     return (
