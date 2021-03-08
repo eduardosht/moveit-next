@@ -48,4 +48,4 @@ To initilize the project, just run
 
 **Backend-end**
  - [Firebase](https://firebase.google.com/?hl=pt-br) (Authentication/Firestore)
- - [Vercel](https://vercel.com/docs)
+ - [Vercel](https://vercel.com/docs) 
