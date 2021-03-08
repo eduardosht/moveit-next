@@ -61,3 +61,22 @@ const getUserDocument = async uid => {
     console.error("Error fetching user", error);
   }
 };
+
+export const updateUserDocument = async (user, additionalData) => {
+  if (!user) return;
+
+  try {
+    const userRef = firestore.doc(`users/${user.uid}`);
+    const { level, experience, challengesCompleted } = additionalData;
+    await userRef.update({
+      ...user,
+      level: level,
+      experience: experience,
+      challengesCompleted: challengesCompleted
+    });
+
+    return getUserDocument(user.uid);
+  } catch (error) {
+    console.error("Error updating user", error);
+  }
+}

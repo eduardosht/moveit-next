@@ -5,8 +5,9 @@ import styles from '../styles/components/Profile.module.css';
 
 export function Profile() {
     const { level } = useContext(ChallengesContext);
-    const { user } = useContext(UserContext);
-    const { photoURL, displayName, email } = user.user;
+    const { user, updateUserData } = useContext(UserContext);
+    const { photoURL, displayName, email } = user;
+
     return (
         <div className={styles.profileContainer}>
             <img src={photoURL ? photoURL : 'no-image.png'} alt="Eduardo Fujiwara" />
@@ -14,7 +15,7 @@ export function Profile() {
                 <strong>{displayName}</strong>
                 <p>
                     <img src="icons/level.svg" alt="" />
-                    Level {level}
+                    Level {user.level ? user.level : level}
                 </p>
             </div>
         </div>

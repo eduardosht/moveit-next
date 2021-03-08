@@ -7,11 +7,11 @@ function Topbar() {
     const { user, signOut } = useContext(UserContext);
 
     return (
-        user.user != null ?
+        user != null ?
             (
                 <div className={styles.topbarContainer}>
                     <div></div>
-                    <div>Move it - {user.user.displayName}</div>
+                    <div>Move it - {user.displayName}</div>
                     <a onClick={(e) => signOut(e)}>Sign out</a>
                 </div>
             ) :

@@ -13,7 +13,7 @@ function Login() {
   const { user } = useContext(UserContext);
 
   return (
-    user.user != null ?
+    user != null ?
       <Home level={0} currentExperience={0} challengesCompleted={0} />
       :
       <Router>

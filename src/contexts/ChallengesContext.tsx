@@ -1,16 +1,8 @@
-import { createContext, useState, ReactNode, useEffect } from 'react';
-
-import Cookies from 'js-cookie';
+import { createContext, useState, useEffect, useContext } from 'react';
 
 import challenges from '../../challenges.json';
 import { LevelUpModal } from '../components/LevelUpModal';
-
-interface ChallengesProviderProps {
-    children: ReactNode;
-    level: number;
-    currentExperience: number;
-    challengesCompleted: number;
-}
+import { UserContext } from './UserContext';
 
 interface Challenge {
     type: 'body' | 'eye';
@@ -33,10 +25,12 @@ interface ChallengesContextData {
 
 export const ChallengesContext = createContext({} as ChallengesContextData);
 
-export function ChallengsProvider({ children, ...rest }: ChallengesProviderProps) {
-    const [level, setLevel] = useState(rest.level ?? 1);
-    const [currentExperience, setCurrentExperience] = useState(rest.currentExperience ?? 0);
-    const [challengesCompleted, setChallengesCompleted] = useState(rest.challengesCompleted ?? 0);
+export function ChallengsProvider({ children }) {
+    const { user, updateUserData } = useContext(UserContext);
+
+    const [level, setLevel] = useState(user.level ?? 1);
+    const [currentExperience, setCurrentExperience] = useState(user.experience ?? 0);
+    const [challengesCompleted, setChallengesCompleted] = useState(user.challengesCompleted ?? 0);
     const [activeChallenge, setActiveChallenge] = useState(null);
     const [isLevelUpModalOpen, setIsLevelModalOpen] = useState(false);
 
@@ -47,9 +41,13 @@ export function ChallengsProvider({ children, ...rest }: ChallengesProviderProps
     }, []);
 
     useEffect(() => {
-        Cookies.set('level', String(level));
-        Cookies.set('currentExperience', String(currentExperience));
-        Cookies.set('challengesCompleted', String(challengesCompleted));
+        let currentData = {
+            level: level,
+            experience: currentExperience,
+            challengesCompleted: challengesCompleted
+        }
+
+        updateUserData(currentData);
     }, [level, currentExperience, challengesCompleted]);
 
     function levelUp() {
