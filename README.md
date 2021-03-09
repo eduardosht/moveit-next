@@ -33,14 +33,14 @@ To initilize the project, just run
 |eduardosht|Create menu (Rank page/Profile Page/Logout...)|PENDING|
 |eduardosht|Simple test scenario|PENDING|
 |eduardosht|Create environment with Docker|PENDING|
-|undefined|Multi lang project|PENDING|
+|marcus.marinho|Multi lang project|PENDING|
 |undefined|Create README Pt-BR|PENDING|
 |...|...|PENDING|
 
 # Stack (what we can found here?)
 
 **Front-end**
- - [React JS](https://pt-br.reactjs.org/)
+ - [React JS](https://pt-br.reactjs.org/)!
  - [Typescript](https://www.typescriptlang.org/)
  - [Next JS](https://nextjs.org/)
  - [HTML / CSS](https://www.w3schools.com/)
