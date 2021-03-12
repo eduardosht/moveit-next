@@ -31,7 +31,7 @@ To initilize the project, just run
 |eduardosht|Create ranking page|PENDING|
 |eduardosht|Create profile page|PENDING|
 |eduardosht|Create menu (Rank page/Profile Page/Logout...)|PENDING|
-|eduardosht|Simple test scenario|PENDING|
+|eduardosht|Simple test scenario|DONE|
 |eduardosht|Create environment with Docker|PENDING|
 |marcus.marinho|Multi lang project|PENDING|
 |undefined|Create README Pt-BR|PENDING|
@@ -45,6 +45,7 @@ To initilize the project, just run
  - [Next JS](https://nextjs.org/)
  - [HTML / CSS](https://www.w3schools.com/)
  - [NPM](https://www.npmjs.com/)
+ - [Jest Testing Framework](https://jestjs.io/)
 
 **Backend-end**
  - [Firebase](https://firebase.google.com/?hl=pt-br) (Authentication/Firestore)
