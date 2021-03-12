@@ -16,7 +16,7 @@ function Topbar() {
                 </div>
             ) :
             (
-                <div></div>
+                <div>a</div>
             )
     )
 }
