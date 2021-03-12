@@ -27,6 +27,6 @@ describe("Topbar component test", () => {
         };
 
         renderUserContext(user);
-        expect(screen.getByText("Sign out")).toBeInTheDocument();
+        expect(screen.getByText("testing deployment error")).toBeInTheDocument();
     });
 });
